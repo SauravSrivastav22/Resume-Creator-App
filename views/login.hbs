@@ -1,0 +1,116 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Resume Creator || Login Page</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,700;1,600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.3/css/fontawesome.min.css">
+</head>
+
+
+<body>
+    <div class="container">
+
+        <div class="navbar">
+            <div class="logo">
+                <a href="/"> <img src="img/logo1.png" width="130px"></a>
+            </div>
+            <nav>
+                <ul>
+                    {{!-- <li><a href="/resume-sample">Resume Sample</a> </li> --}}
+                    <li><a href="/login">Login</a> </li>
+                    <li><a href="/register">Register</a> </li>
+                    <li><a href="/about">About Us</a> </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <section id="home">
+         <div class="conatainer mt-4 p-5">
+        {{!-- <div class="row"> --}}
+            {{!-- <div class="col-md-4 col-12 mx-auto"> --}}
+                <div class="card">
+                    <div class="card-header">
+                        <h4>Login Form</h4>
+                    </div>
+                    <div class="card-body">
+                        <form action="/auth/login" method="POST" autocomplete="off" > 
+                            <div class="form-group mb-3">
+                                <label for="email">Email Address</label>
+                                <input type="email" required name="email" id="email"
+                                    class="form-control">
+                            </div>
+                            <div class="form-group mb-3">
+                                <label for="password">Password</label>
+                                <input type="password" required name="password" id="password"
+                                    class="form-control">
+                            </div>
+                            <div class="form-group">
+                                <button class="btn btn-info">Submit</button>
+                            </div>
+                        </form>
+
+                    </div>
+                   
+                </div>
+                 {{#if message}}
+                    <h4 class="alert alert-danger mt-4">
+                        {{message}}
+                    </h4>
+                    {{/if}}
+                {{!-- 
+            </div> --}}
+            {{!-- </div> --}}
+    </div>
+    </section>
+
+    
+        <div class="footer">
+            <div class="container">
+                <div class="row">
+                    <div class="footer-col-1">
+                        <h3>Dowload Our App</h3>
+                        <p>Download App for Android and ios Mobile Phone.</p>
+                        <div class="app-logo">
+                            <img src="img/play-store.png">
+                            <img src="img/app-store.png">
+                        </div>
+                    </div>
+                    <div class="footer-col-2">
+                        <img src="img/logorca.PNG" width="80" height="80">
+                        <p>Our Purpose Is To Make This Site More Popular Than Amazone, Flipkart etc..</p>
+                    </div>
+                    <div class="footer-col-3">
+                        <h3>Useful Links</h3>
+                        <ul>
+                            <li>Coupns</li>
+                            <li>Blog Post</li>
+                            <li>Return Policy</li>
+                            <li>Join Affilicate</li>
+                        </ul>
+                    </div>
+                    <div class="footer-col-4">
+                        <h3>Folow Us</h3>
+                        <ul>
+                            <li>Facebook</li>
+                            <li>Twitter</li>
+                            <li>Instagram</li>
+                            <li>Youtube</li>
+                        </ul>
+                    </div>
+                </div>
+                <hr>
+                <p class="copyright">@Copyright 2050</p>
+            </div>
+        </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>

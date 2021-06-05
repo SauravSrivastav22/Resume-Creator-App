@@ -1,0 +1,220 @@
+
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,700;1,600&display=swap"
+        rel="stylesheet">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" referrerpolicy="no-referrer" />
+
+    <title>Resume Generator</title>
+</head>
+
+<body>
+    <div class="container" id="nav">
+        <div class="navbar">
+            <div class="logo">
+                <a  href="/home"> <img src="img/logo1.png" width="130px"></a>
+            </div>
+            <nav>
+                <ul style="display: flex;justify-content:flex-end;align-items:center">
+                    <li>
+                        <img style="height: 50px;width:50px;border-radius:50%;" src="/images/upload_images/{{image}}" alt="">
+                    </li>
+                    <li style="text-transform: capitalize;"><i class="fas fa-users"></i> {{name}}</li>
+                    <li><a href="/resume">Create Resume</a> </li>
+                    <li><a href="/logout">Logout</a> </li>
+                    <li><a href="/a">Click Me</a> </li>
+                  
+                </ul>
+            </nav>
+        </div>
+    </div>
+    <div class="container" id="cv-form">
+        <h1 class="text-center my-2">Resume Generator</h1>
+        <p class="text-center">By TeamNoobs Coading...</p>
+        <img src="1.JPG" width="40px">
+        <div class="row">
+            <div class="col-md-6 col-12 mx-auto">
+                <h3>Personal Information</h3>
+                <!-- <form action=""> -->
+                <div class="form-group mb-3">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Enter here" class="form-control" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="contact">Your Contact</label>
+                    <input type="text" id="contact" placeholder="Enter here" class="form-control" required>
+                </div>
+                <div class="form-group mb-3">
+                    <label for="address">Your Address</label>
+                    <textarea name="" id="address" cols="30" placeholder="Enter here" class="form-control"
+                        rows="5"></textarea>
+                </div>
+                <p class="text-secondary">Important Links</p>
+                <div class="form-group">
+                    <label for="linkedin">LinkedIn</label>
+                    <input type="text" id="linkedin" placeholder="Enter here" class="form-control" required>
+                </div>
+                <div class="form-group">
+                    <label for="github">Github</label>
+                    <input name="" id="github" placeholder="Enter here" class="form-control" />
+                </div>
+                <!-- </form> -->
+            </div>
+            <div class="col-md-6 col-12 mx-auto">
+                <h3>Professional Information</h3>
+                
+                <div class="form-group mb-3">
+                    <label for="">Objective</label>
+                    <textarea name="" id="objective" cols="30" placeholder="Enter here" rows="5" class="form-control"></textarea>
+                </div>
+                <div class="form-group mb-3" id="weField">
+                    <label for="">Work Experience</label>
+                    <textarea name="" placeholder="Enter here" class="form-control we"></textarea>
+                    <div class="container text-center mt-2 " id="workBtn">
+                        <button onclick="addNewWkField()" class="btn btn-dark">Add</button>
+                    </div>
+                </div>
+                <div class="form-group mb-3" id="aqField">
+                    <label for="aq">Accademic Qualification</label>
+                    <textarea name="" placeholder="Enter here" class="form-control aq"></textarea>
+                    <div class="container text-center mt-2" id="aqBtn">
+                        <button onclick="addNewAqField()" class="btn btn-dark">Add</button>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+        <div class="container text-center mt-2">
+            <button class="btn btn-dark" onclick="generateCv()" >Generate Resume</button>
+        </div>
+    </div>
+
+    <div class="container my-5" id="cv-template">
+        <div class="row">
+            <div class="col-md-4 text-center py-5 background">
+                <img src="https://cdn3.iconfinder.com/data/icons/avatars-round-flat/33/man5-512.png" alt=""
+                    class="img-fluid my-img">
+                <div class="container details">
+                    <p  id="nameT1" >Saurav Srivastav</p>
+                    <p id="contactT" >+91 - 7003143405</p>
+                    <p id="addressT" >Sareya Ward No-3 Near Sarswati Talkies, Gopalganj, Bihar</p>
+                </div>
+                <hr>
+                <div class="socials">
+                    <p>
+                        <a href="" id="linkedinT">LinkedIn</a>
+                    </p>
+                    <p>
+                        <a href="" id="githubT" >Github</a>
+                    </p>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <h1 class="my-4" id="nameT2" style="font-weight:900">
+                    Saurav Srivastav
+                </h1>
+                <div class="card">
+                    <div class="card-header bg-info">
+                        <h3>Objective</h3>
+                    </div>
+                    <div class="card-body">
+                        <p id="objectiveT" >Lorem ipsum dolor sit, amet consectetur adipisicing elit. Commodi ducimus dolore explicabo
+                            minima fugiat asperiores quod voluptas, illum, odio, magnam harum blanditiis perferendis?
+                            Veniam quas dolor, possimus aliquid blanditiis iste?</p>
+                    </div>
+                </div>
+                <div class="card mt-4">
+                    <div class="card-header bg-info">
+                        <h3>Wrok Experience</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul id="wkT" >
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card mt-4">
+                    <div class="card-header bg-info">
+                        <h3>Academic Details</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul  id="aqT">
+                           
+                        </ul>
+                    </div>
+                </div>
+                <div class="conatiner text-center my-2"  id="printBtn">
+                    <button class="btn btn-info" onclick="printCv()" >Print Resume</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="footer" id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="footer-col-1">
+                    <h3>Dowload Our App</h3>
+                    <p>Download App for Android and ios Mobile Phone.</p>
+                    <div class="app-logo">
+                        <img src="img/play-store.png">
+                        <img src="img/app-store.png">
+                    </div>
+                </div>
+                <div class="footer-col-2">
+                    <img src="img/logorca.PNG" width="80" height="80">
+                    <p>Our Purpose Is To Make This Site More Popular Than Amazone, Flipkart etc..</p>
+                </div>
+                <div class="footer-col-3">
+                    <h3>Useful Links</h3>
+                    <ul>
+                        <li>Coupns</li>
+                        <li>Blog Post</li>
+                        <li>Return Policy</li>
+                        <li>Join Affilicate</li>
+                    </ul>
+                </div>
+                <div class="footer-col-4">
+                    <h3>Folow Us</h3>
+                    <ul>
+                        <li>Facebook</li>
+                        <li>Twitter</li>
+                        <li>Instagram</li>
+                        <li>Youtube</li>
+                    </ul>
+                </div>
+            </div>
+            <hr>
+            <p class="copyright">@Copyright 2050</p>
+        </div>
+    </div>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4"
+        crossorigin="anonymous"></script>
+
+    <!-- Option 2: Separate Popper and Bootstrap JS -->
+    <!--
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.min.js" integrity="sha384-Atwg2Pkwv9vp0ygtn1JAojH0nYbwNJLPhwyoVbhoPwBhjQPR5VtM2+xf0Uwh9KtT" crossorigin="anonymous"></script>
+    -->
+    <script src="app.js">
+    </script>
+</body>
+
+</html>

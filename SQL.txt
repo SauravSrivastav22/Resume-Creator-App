@@ -1,0 +1,46 @@
+1st install MySQL
+then open cmd and type = mysql -u root -p
+password u right
+
+
+then we need to create a database = create database ;  enter
+
+then check its created or not type = show databases;
+ semicolomn required alws;
+
+after create a database
+
+type:- 
+
+create table user(table name h user) (
+	id INT NOT NULL AUTO INCREMENT,
+	name VARCHAR(50) NOT NULL,
+	email VARCHAR(100) NOT NULL,
+	password VARCHAR(100) NOT NULL,
+	PRIMARY KEY(id)
+	);
+databse created
+check database like
+ = show tables;
+
+then open workbench :-
+	click local 
+	type password..
+
+after click the schemas 
+
+show databases;(it shows database table)
+
+then go to the VSC and .env file and change the databases password
+
+go to the terminal and open git bash and type node app.js
+
+register..
+
+after resigester go to the workbench
+
+and search for the database (type)
+
+select * from users;
+
+
